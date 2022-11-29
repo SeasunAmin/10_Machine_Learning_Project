@@ -1,0 +1,141 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>House Price</title>
+    <style>
+        *{
+            margin: 0%;
+            padding: 0%;
+        }
+        .box{
+            height: 150px;
+            width: 100%;
+            background-color: rgb(215, 250, 249);
+            margin-left: auto;
+            margin-right: auto;
+            display: flex;
+            
+        }
+        .box .img1{
+           
+            margin-left: 25%;
+        }
+        .box .img2{
+            margin-left: 15px;
+        }
+        .box h2{
+            position: relative;
+            top: 45%;
+        }
+
+        .input{
+            margin-top: 20px;
+            height: 300px;
+            width: 600px;
+            background-color: rgb(129, 180, 122);
+            margin-left: auto;
+            margin-right: auto;
+            box-shadow: 5px 5px 3px #0d6a51;
+        }
+        .input .text{
+            height: 50px;
+            margin-top: 40px;
+            
+            margin-left: 38%;
+            text-align: center;
+           
+        }
+        .btn {
+            height: 40px;
+            width: 70px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+       .pre_btn{
+           margin-top: 70%;
+           height: 40px;
+           width: 90px;
+           font-weight: bold;
+           background-color: rgb(27, 24, 24);
+           color: white;
+           border-radius: 7px;
+           cursor: pointer;
+           box-shadow: 5px 5px 3px #090909;
+        }
+        .btn .pre_btn:hover{
+            background-color: rgb(185, 13, 76);
+        }
+
+        .footer {
+        position: fixed;
+        left: 0;
+        bottom: 0;
+        width: 100%;
+        height: 70px;
+        background-color: rgb(7, 24, 18);
+        color: white;
+        text-align: center;
+       
+      }.predict_text h2{
+        position: absolute;
+        left: 49%;
+      }
+
+    .footer .p1{
+       margin-top: 20px;
+    }
+    .footer a{
+        color: rgb(182, 8, 8);
+    }
+   .box_2 {
+     margin-left: 46%;
+
+   }
+
+    </style>
+</head>
+<body>
+   <form action="http://localhost:5000/index" method="post">
+
+    <div class="box">
+        <img class="img1" src="{{ url_for('static', filename='image/house_1.png') }}"></img>
+        <h2> Simple Linear Regression Price Detection</h2>
+        <img class="img2" src="{{ url_for('static', filename='image/house_1.png') }}"></img>
+    </div>
+
+
+    
+        <div class="input">
+        <input name="area" class="text" type="text" placeholder="Square feet" required>
+        <br>
+       
+        <div class="btn">
+            <button class="pre_btn">Predict</button>
+
+        </div>
+
+        
+    </div>
+    <br>
+
+    <div class="box_2">
+        
+       
+        <h2>{{boss}}</h2>
+        
+        </div>
+    </div>
+
+
+    <div class="footer">
+        <p class="p1" >Developed by: Nazrul Amin Seasun</p>
+        <a href="">seasunamin712@gmail.com</a>
+    </div>
+   </form>
+
+ 
+</body>
+</html>
