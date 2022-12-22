@@ -1,0 +1,205 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Profit Detection</title>
+
+    <style>
+        *{
+            margin: 0%;
+            padding:0%;
+            
+        }
+        body{
+
+            background-image: url({{ url_for('static', filename='image/img17.jpg') }});
+            background-repeat: no-repeat;
+            background-attachment: fixed;
+            background-size: 100% 100%;
+        }
+        .nev_bar{
+            width: 100%;
+            height: 100px;
+            background-color: rgb(9, 82, 53);
+
+           display: flex;
+           
+        }
+        .nev_bar .img1{
+            height: 80px;
+            margin-top: 10px;
+            margin-left: 10%;
+             
+        }
+        .nev_bar h1{
+            margin-left: 13%;
+            margin-top: 20px;
+            text-align: center;
+            color: azure;
+        }
+        .nev_bar .img2{
+            height: 80px;
+            margin-top: 10px;
+            margin-left: auto;  
+            display: block;    
+            margin-right: 10%;    
+        }
+
+        .box{
+            padding: 5px;
+            height: 400px;
+            width: 90%;
+            background-color: rgb(234, 220, 202);
+            margin-left: auto;
+            margin-right: auto;
+            margin-top: 2%;
+            box-shadow: 5px 5px 3px #1b1c10;
+
+            background-image: url({{ url_for('static', filename='image/img15.jpg') }});
+            background-repeat: no-repeat;
+            
+            background-size: 100% 100%;
+        }
+       .table_1 {
+            font-size: 20px;
+            margin-top:2% ;
+            position: absolute;
+            left: 38%;
+
+
+           
+            
+        }
+        .table_1 #drop{
+            width: 80%;
+            height: 40px;
+            text-align: center;
+            font-size: 16px;
+        }
+        .table_1  #mcost{
+            width: 78%;
+            height: 40px;
+            text-align: center;
+            font-size: 16px;
+        }
+        .table_1 #acost{
+            width: 78%;
+            height: 40px;
+            text-align: center;
+            font-size: 16px;
+        }
+        .table_1 #tcost{
+            width: 78%;
+            height: 40px;
+            text-align: center;
+            font-size: 16px;
+        }
+        .btn{
+            width: 95%;
+            height: 50px;
+            cursor: pointer;
+            background-color: rgb(164, 222, 222);
+            font-weight: bold;
+            font-size: 15px;
+            margin-left: 0%;
+            border-radius: 10px;
+
+            box-shadow: 5px 5px 3px #1b1c10;
+            
+        }
+        .btn:hover{
+            background-color: aquamarine;
+        }
+
+        h2{
+            margin-top: 25px;
+            text-align: center;
+        }
+        .footer{
+        position: fixed;
+        left: 0;
+        bottom: 0;
+        width: 100%;
+        height: 70px;
+        background-color: rgb(7, 24, 18);
+        color: white;
+        text-align: center;
+        }
+        .prediction{
+            color: rgb(60, 7, 195);
+            background-color: rgb(200, 236, 103);
+            width: 200px;
+           
+            margin-left: auto;
+            margin-right: auto;
+            text-align: center;
+            padding: 10px;
+        }
+        .footer a{
+            color: rgb(188, 13, 13);
+        }
+    </style>
+
+</head>
+<body>
+
+  
+   <form action="http://localhost:5000/font_page" method="post">
+    
+    <div class="nev_bar">
+        <img class="img1" src="{{ url_for('static', filename='image/idea.png') }}"></img>
+        <h1> Profit Prediction with Multiple Linear Regression </h1>
+         <img class="img2" src="{{ url_for('static', filename='image/idea.png') }}"></img>
+      </div>
+
+    <div class="box">
+        <h2>...Input Cost Information... </h2>
+        <div class="table_1">
+           
+            <table>
+
+                <tr>
+                    <td>Select Area:</td>
+                    <td>
+                        <select name="city" id="drop" required="required" >
+                           
+                            <option  value="Dhaka">Dhaka</option>
+                            <option  value="CTG">CTG</option>
+                            <option  value="Rangpur">Rangpur</option>
+                        </select>
+                    </td>
+                </tr>
+    
+            
+                <tr>
+                        <td  >Marketing cost :</td>
+                        <td><input id="mcost" name="mcost" type="text" required="required"></td>
+                  
+                </tr>
+                <tr>
+                    <td>Employee cost : </td>
+                    <td><input type="text" name="acost" id="acost" required="required"></td>
+                </tr>
+                <tr>
+                    <td>Transport cost : </td>
+                    <td><input type="text" name="tcost" id="tcost" required="required"></td>
+                </tr>
+    
+            </table>
+            <br>
+            <button class="btn">Predict Profit</button>
+        </div>
+    </div>
+       <h2 class="prediction">{{boss}}</h2>
+   </form>
+
+    <div class="footer">
+        <br>
+        <p class="p1" >Developed by: Nazrul Amin Seasun</p>
+        <a href="">seasunamin712@gmail.com</a>
+    </div>
+    
+</body>
+</html>
