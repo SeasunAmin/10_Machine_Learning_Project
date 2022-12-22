@@ -1,0 +1,186 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link rel="icon" type="images/x-icon" href="static/ninja2.png">
+    <link rel="stylesheet" href="static/project2.css">
+    <title>Document</title>
+
+    <style>
+            body{
+    background-image: url(static/car_3.png);
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    background-position: right;
+
+}
+    </style>
+
+</head>
+
+<body>
+
+
+    <div class="header">
+
+        <div class="logo">
+            <img src="static/car_7.png" width="130">
+        </div>
+        <div class="logo-text">
+            <h1>Car Selling Price Detection System</h1>
+        </div>
+
+        <div class="nav-bar">
+            <nav>
+                <ul>
+                    <li><a href="#"></a>Predict</li>
+                    <li><a href="#"></a>Best</li>
+                    <li><a href="#"></a>Price</li>
+                    <li><a href="#"></a>Have</li>
+                    <li><a href="#"></a>Fun</li>
+                </ul>
+            </nav>
+        </div>
+
+    </div>
+
+    <br><br>
+    <fieldset class="border">
+        <legend style="margin-left: 100px;" > Car Infomation's</legend>
+
+
+    <div  class="div_1" style="color:blue">
+        <form action="{{ url_for('predict')}}" method="post">
+
+             <!--<h2 style="text-align:center ;">Predictive analysis</h2> -->
+
+              <Table>
+                <tr>
+                     <td  style="font-size: 20px;">
+                        Buying year?
+                    </td>
+                    <td>
+                        <input id="first" placeholder="Year" name="Year" type="number ">
+                    </td>
+                </tr>
+
+                <tr>
+                    <td  style="font-size: 20px;">
+                        Showroom Price?(In lakes)
+                   </td>
+                   <td>
+                    <input id="second" placeholder="Price" name="Present_Price" required="required">
+                   </td>
+               </tr>
+
+
+               <tr>
+                <td  style="font-size: 20px;">
+                     Kilometers Derived?
+               </td>
+               <td>
+                <input id="third" placeholder="Drived" name="Kms_Driven" required="required">
+               </td>
+              </tr>
+
+              <tr>
+                <td  style="font-size: 20px;">
+                     Previously owners (0-3)?
+               </td>
+               <td>
+                <input id="fourth" placeholder="Owner" name="Owner" required="required">
+               </td>
+           </tr>
+
+           <tr>
+            <td  style="font-size: 20px;">
+                 Fuel type?
+           </td>
+           <td>
+            <select name="Fuel_Type_Petrol" id="fuel" required="required">
+                <option value="Petrol">Petrol</option>
+                <option value="Diesel">Diesel</option>
+                <option value="Diesel">CNG</option>
+            </select>
+           </td>
+       </tr>
+
+       <tr>
+        <td  style="font-size: 20px;">
+            A Dealer or Individual?
+       </td>
+       <td>
+        <select name="Seller_Type_Individual" id="resea" required="required">
+            <option value="Dealer">Dealer</option>
+            <option value="Individual">Individual</option>
+        </select>
+       </td>
+       </tr>
+
+       <tr>
+        <td  style="font-size: 20px;">
+            Transmission type?
+       </td>
+       <td>
+        <select name="Transmission_Mannual" id="research" required="required">
+            <option value="Manual">Manual Car</option>
+            <option value="Automatic">Automatic Car</option>
+        </select>
+       </td>
+       </tr>
+
+         </Table>
+
+         <br>
+         <br>
+         <br><br>
+
+            <div class="button">
+
+                <button id="showButton">Calculate Price</button>
+
+                <div class="modal" id="hide">
+                <div class="modal-header">
+                <button id="hideIcon">
+                <i class="fa fa-close"></i>
+
+
+            </div>
+
+            <div class="modal-body">
+            <img src="static/vehicle.png" alt="...">
+
+            <h4 style="text-align: center;" >{{ prediction_text }}<h4>
+            <p>
+                Click the button below to close
+            </p>
+            <button id="hideButton">Close</button>
+
+            </div>
+
+                </div>
+
+    <!-- JS File -->
+    <script type="text/javascript" src="static/script.js"></script>
+              </div>
+
+            </div>
+
+
+
+        </form>
+    </fieldset>
+    </div>
+
+<div class="footer">
+  <p >Developed By:</p>
+    <p>Nazrul Amin Seasun </p>
+    <p>Department of Computer Science and Engineering </p>
+</div>
+
+</body>
+
+</html>
